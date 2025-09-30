@@ -1,0 +1,25 @@
+# Virtual environments
+myenv/
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs and temporary files
+*.log
+*.tmp
+.*
+!.gitignore
+
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+
+__pycache__/
