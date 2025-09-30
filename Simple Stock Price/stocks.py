@@ -41,11 +41,11 @@ with col1:
 
   ticker = yf.Ticker(input_ticker)
   info = ticker.info
-  st.subheader(f"{info["longName"]}")
-  st.markdown(f"**Sector**: {info["sector"]}")
-  st.markdown(f"**Industry**: {info["industry"]}")
-  st.markdown(f"**Market capitalization**: {info["marketCap"]}")
-  st.markdown(f"**Currency**: {info["currency"]}")
+  st.subheader(f"{info['longName']}")
+  st.markdown(f"**Sector**: {info['sector']}")
+  st.markdown(f"**Industry**: {info['industry']}")
+  st.markdown(f"**Market capitalization**: {info['marketCap']}")
+  st.markdown(f"**Currency**: {info['currency']}")
   website = info.get("website", "N/A")
   if website != "N/A":
       st.markdown(f"**Website:** [***{website}***]({website})")
@@ -59,7 +59,7 @@ with col2:
           df = ticker.history(start=input_start_date, end=input_end_date)
           df.reset_index(inplace=True)
 
-          st.subheader(f"Stock Data for {input_ticker} ({info["currency"]})\nfrom {input_start_date} to {input_end_date}")
+          st.subheader(f"Stock Data for {input_ticker} ({info['currency']})\nfrom {input_start_date} to {input_end_date}")
 
           df_melted = df.melt(id_vars=["Date"], value_vars=["Open", "Close"], var_name="Price Type", value_name="Price")
 
